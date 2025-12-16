@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Salão Espaço Helena</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<meta property="og:title" content="Salão Espaço Helena" />
+<meta property="og:description" content="Valorizamos técnica, estilo e dedicação em cada serviço. Venha conhecer nosso salão!" />
+<meta property="og:image" content="https://carlos-06467.github.io/salao-espaco-helena/og-image1.png" />
+<meta property="og:url" content="https://carlos-06467.github.io/salao-espaco-helena/antesedepoispasta/antesedepois.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { font-family:'Poppins', sans-serif; background:#fff; height:100%; }
+.page-container { min-height:100vh; display:flex; flex-direction:column; }
+
+/* MENU SUPERIOR */
+.menu {
+  background:#000;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:10px 0;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:2000;
+}
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:4px 8px;
+  border-radius:4px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  transition:0.3s;
+}
+.menu a:hover { background:#222; }
+.menu a::before { content:"•"; color:#C9A35B; margin-right:4px; }
+.menu a.active { color:#C9A35B; }
+
+.menu-spacer { height:60px; }
+
+/* TÍTULO */
+.titulo-site {
+  font-family:'Poppins', sans-serif;
+  font-size:42px;
+  font-weight:bold;
+  text-align:center;
+  margin-top:20px;
+  line-height:1.3;
+  color:#555; /* cinza */
+}
+.intro { display:block; margin-bottom:12px; }
+
+/* RODAPÉ */
+footer {
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:30px 15px;
+  margin-top:auto;
+}
+footer .logo { font-family:'Great Vibes', cursive; font-size:32px; margin-bottom:10px; }
+footer .salao { color:#fff; }
+footer .helena { color:#C9A35B; font-weight:bold; }
+footer .localidade { font-size:14px; }
+
+/* ESCONDE APENAS O MENU DA DIREITA */
+.side-tab, .tab-panel, .overlay { display:none !important; }
+
+/* BOTÃO FLUTUANTE */
+.float-tab-container {
+  position:fixed;
+  top:50%;
+  left:0;
+  transform:translateY(-50%);
+  background:#000;
+  border:3px solid #555;
+  border-radius:8px;
+  padding:6px 8px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  cursor:pointer;
+  z-index:1001;
+}
+.float-tab-container div { color:#fff; font-size:22px; margin:2px 0; }
+
+/* PAINEL DO BOTÃO */
+.float-panel {
+  position:fixed;
+  top:50%;
+  left:-220px;
+  transform:translateY(-50%);
+  width:200px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition:left 0.3s;
+  z-index:1000;
+}
+.float-panel.active { left:60px; }
+
+.subtopic-btn {
+  display: block;
+  text-decoration: none;
+  background: #000;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: left;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 20px;
+}
+.subtopic-btn:hover { background: #222; }
+.subtopic-btn.active { color: #C9A35B; }
+
+/* GALERIA */
+.sobre { position:relative; padding:20px; display:flex; justify-content:center; }
+.gallery-wrapper { width:100%; max-width:1200px; }
+.gallery { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.gallery img {
+  width:100%;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  display:block;
+  transition:transform 0.3s, box-shadow 0.3s;
+  outline:none !important;
+  box-shadow:none !important;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+}
+.gallery img:focus,
+.gallery img:focus-visible,
+.gallery img:active { outline:none !important; box-shadow:none !important; }
+.gallery img:hover { transform:scale(1.03); box-shadow:0 0 10px #FFD70033; }
+
+/* MODAL */
+.modal {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.95);
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+}
+.modal img { max-width:90%; max-height:90%; border:none; border-radius:8px; }
+.modal.active { display:flex; }
+
+@media(max-width:600px){
+  .gallery { grid-template-columns:1fr 1fr; }
+  .titulo-site { font-size:36px; }
+  .menu a { font-size:14px; padding:4px 6px; }
+}
+</style>
+</head>
+
+<body>
+<div class="page-container">
+
+<link rel="stylesheet" href="../menu.css">
+
+<nav class="menu">
+  <a href="../index.html">Introdução</a>
+  <a href="../servicos.html">Serviços</a>
+  <a href="../vitrine.html">Vitrine</a>
+</nav>
+
+<div class="menu-spacer"></div>
+
+<h1 class="titulo-site">
+  Antes e depois, Homens, Cabelos
+</h1>
+
+<section class="sobre">
+  <div class="gallery-wrapper">
+    <div class="gallery">
+     <!-- <img src="../postagens/teste1.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste2.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste3.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste4.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste5.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste6.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste7.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste8.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste9.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste10.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste11.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste12.jpg" onclick="openModal(this.src)">
+      <img src="../postagens/teste13.jpg" onclick="openModal(this.src)">
+    </div> -->
+  </div>
+
+  <div class="modal" id="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Imagem Ampliada">
+  </div>
+</section>
+
+<div class="float-tab-container" id="floatTab">
+  <div>🔎</div>
+  <div>🛠️</div>
+</div>
+
+<div class="float-panel" id="floatPanel">
+  <a href="../postagens.html" class="subtopic-btn">📸 Publicações do Salão</a>
+  <a href="../salaoestadoatual.html" class="subtopic-btn">📈 Movimento do Salão</a>
+  <a href="../antesedepois.html" class="subtopic-btn">✨ Antes e Depois</a>
+</div>
+
+<footer>
+  <div class="logo">
+    <span class="salao">Salão</span>
+    <span class="helena">Espaço Helena</span>
+  </div>
+  <div class="localidade">
+    Rua Maria Rodrigues de Pontes - Alto do Velame - Russas, 490
+  </div>
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll('.menu a').forEach(link => {
+  if(link.href === window.location.href) link.classList.add('active');
+});
+
+const floatTab = document.getElementById('floatTab');
+const floatPanel = document.getElementById('floatPanel');
+
+floatTab.addEventListener('click', function(e){
+  e.stopPropagation();
+  floatPanel.classList.toggle('active');
+});
+floatPanel.addEventListener('click', function(e){
+  e.stopPropagation();
+});
+document.addEventListener('click', function(){
+  floatPanel.classList.remove('active');
+});
+
+function openModal(src){
+  document.getElementById('modalImg').src = src;
+  document.getElementById('modal').classList.add('active');
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('active');
+}
+
+const subtopicLinks = document.querySelectorAll('.subtopic-btn');
+subtopicLinks.forEach(link => {
+  if (link.href === window.location.href) link.classList.add('active');
+});
+</script>
+
+</body>
+</html>
