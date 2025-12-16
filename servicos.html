@@ -1,0 +1,236 @@
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+<head>
+  <link rel="preload" as="image" href="fundoservico.png">
+<meta charset="UTF-8">  
+<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+<title>Serviços do Espaço Helena</title>  
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  
+  
+<!-- Meta tags para compartilhamento com logo -->  
+<meta property="og:title" content="Serviços do Espaço Helena" />  
+<meta property="og:description" content="Confira todos os serviços do Espaço Helena: cortes masculinos e femininos, depilação, manicure e muito mais!" />  
+<meta property="og:image" content="https://carlos-06467.github.io/salao-espaco-helena/og-image1.png" />  
+<meta property="og:url" content="https://carlos-06467.github.io/salao-espaco-helena/servicos.html" />  
+<meta name="twitter:card" content="summary_large_image" />  
+  
+<style>  
+  * { box-sizing: border-box; margin:0; padding:0; }  
+  html, body { font-family:'Poppins', sans-serif; background:#fff; height:100%; }  
+  .page-container { min-height:100vh; display:flex; flex-direction:column; }  
+  
+  /* Menu */  
+  .menu { background:#000; display:flex; justify-content:center; gap:40px; padding:10px 0; }  
+  .menu a { color:#fff; text-decoration:none; font-weight:600; padding:4px 8px; border-radius:4px; display:flex; align-items:center; gap:6px; transition:0.3s; }  
+  .menu a:hover { background:#222; }  
+  .menu a::before { content:"•"; color:#C9A35B; margin-right:4px; }  
+  .menu a.active { color:#C9A35B; }  
+  
+  /* TOPO COM IMAGEM */
+  .titulo-site {   
+    font-size:42px;   
+    text-align:center;   
+    width:100%;  
+    margin:0 0 70px 0;   /* <<< ESPAÇO EXTRA ABAIXO */
+    padding:90px 20px;  
+    line-height:1.3;   
+    color:#fff;   
+    background-image: url("fundoservico.png");  
+    background-size: cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
+    border-radius:0;  
+    text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  }  
+  
+  .salao { color:#fff; }  
+  .helena { color:#C9A35B; font-weight:bold; }  
+  
+  /* Serviços */  
+  .service-block, .agendar-block { margin-bottom:30px; padding:0 30px; }  
+  .service-title { font-weight:600; font-size:22px; margin-bottom:12px; color:#000; }  
+  .service-list { list-style:disc; margin-left:20px; color:#333; }  
+  .service-list li { margin-bottom:6px; }  
+  .agendar-block p { margin:6px 0; font-size:16px; color:#000; }  
+  .agendar-block a { color:#000; text-decoration:none; }  
+  .link-whatsapp a { display:inline-block; border-bottom:2px solid #C9A35B; padding-bottom:2px; font-weight:bold; }  
+  
+  /* Rodapé */  
+  footer { background:#000; color:#fff; text-align:center; padding:30px 15px; margin-top:auto; }  
+  footer .logo { font-family:'Great Vibes', cursive; font-size:32px; margin-bottom:10px; }  
+  footer .salao { color:#fff; }  
+  footer .helena { color:#C9A35B; font-weight:bold; }  
+  footer .localidade { font-size:14px; }  
+  
+  /* Aba lateral */  
+  .side-tab { position:fixed; top:50%; right:0; transform:translateY(-50%); background:#000; color:#fff; width:40px; height:140px; border-radius:8px 0 0 8px; display:flex; justify-content:center; align-items:center; cursor:pointer; z-index:999; }  
+  .tab-panel { position:fixed; top:0; right:-400px; width:400px; height:100%; background:#fff; padding:30px; box-shadow:-3px 0 15px rgba(0,0,0,0.3); transition:right 0.3s; z-index:1000; overflow-y:auto; }  
+  .tab-panel.active { right:0; }  
+  .tab-panel p { font-size:14px; line-height:1.4; margin-bottom:20px; font-weight:bold; }  
+  .tab-panel button { width:100%; padding:12px; margin-bottom:12px; background:#000; color:#C9A35B; border:none; border-radius:6px; font-size:16px; cursor:pointer; font-weight:bold; }  
+  .tab-panel img.area-image { max-width:100%; height:auto; display:block; margin-top:15px; border-radius:6px; }  
+  
+  .overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:998; }  
+  
+  @media(max-width:480px){  
+    .titulo-site{font-size:36px; padding:70px 15px; margin-bottom:50px;}  
+    .menu a{font-size:14px;}  
+    .service-block, .agendar-block { padding:0 15px; }  
+    .tab-panel{width:300px;}  
+  }  
+</style>  
+</head>  
+  
+<body>  
+  
+<div class="page-container">  
+  
+  <link rel="stylesheet" href="menu.css">  
+  
+  <nav class="menu">  
+    <a href="index.html">Introdução</a>  
+    <a href="servicos.html">Serviços</a>  
+    <a href="vitrine.html">Vitrine</a>  
+  </nav>  
+  
+  <h1 class="titulo-site">Serviços do <span class="salao">Espaço Helena</span></h1>  
+  
+  <section class="service-block">  
+    <h2 class="service-title">Cabelos Masculinos</h2>  
+    <ul class="service-list">  
+      <li>Corte masculino (todos os tipos)</li>  
+      <li>Barba</li>  
+      <li>Luzes masculinas</li>  
+      <li>Hidratação</li>  
+      <li>Sobrancelha unissex</li>  
+      <li>Depilação de nariz e ouvido na cera</li>  
+    </ul>  
+  </section>  
+  
+  <section class="service-block">  
+    <h2 class="service-title">Cabelos Femininos</h2>  
+    <ul class="service-list">  
+      <li>Corte feminino (todos os tipos)</li>  
+      <li>Tintura</li>  
+      <li>Escova</li>  
+      <li>Hidratação</li>  
+      <li>Alisamento orgânico</li>  
+      <li>Botox capilar</li>  
+      <li>Tratamento capilar</li>  
+    </ul>  
+  </section>  
+  
+  <section class="service-block">  
+    <h2 class="service-title">Depilação Feminina</h2>  
+    <ul class="service-list">  
+      <li>Íntima completa</li>  
+      <li>Axila</li>  
+      <li>Buço</li>  
+      <li>Pernas (meia)</li>  
+      <li>Pernas (inteira)</li>  
+    </ul>  
+  </section>  
+  
+  <section class="service-block">  
+    <h2 class="service-title">Manicure Unissex</h2>  
+    <ul class="service-list">  
+      <li>Mão</li>  
+      <li>Pé</li>  
+      <li>Mão + pé</li>  
+      <li>Esmaltação</li>  
+      <li>Cutícula</li>  
+      <li>Alongamento de unhas (postiças / alongamento)</li>  
+    </ul>  
+  </section>  
+  
+  <section class="service-block agendar-block">  
+  <p>Agendar com:</p>  
+
+  <p class="link-whatsapp">
+    <a 
+      href="https://api.whatsapp.com/send?phone=5588992010451&text=Olá! Gostaria de agendar um serviço de cabelos unissex ou depilação no Espaço Helena."
+      target="_blank">
+      Helena – cabelos unissex e depilação
+    </a>
+  </p>  
+
+  <!-- <p class="link-whatsapp">
+    <a 
+      href="https://api.whatsapp.com/send?phone=5588994731041&text=Olá! Gostaria de agendar um corte masculino no Espaço Helena."
+      target="_blank">
+      Henrique – cortes masculinos
+    </a>
+  </p>  -->
+
+  <p class="link-whatsapp">
+    <a 
+      href="https://api.whatsapp.com/send?phone=558893641035&text=Olá! Gostaria de agendar um serviço de unhas no Espaço Helena."
+      target="_blank">
+      Dida – unhas unissex
+    </a>
+  </p>  
+</section>
+  
+  <div class="side-tab" id="sideTab">☰</div>  
+  <div class="overlay" id="overlay"></div>  
+  <div class="tab-panel" id="tabPanel">  
+    <p>Explore nossas áreas exclusivas: acompanhe antes e depois, vídeos explicativos, processos e dicas especiais.<br>  
+    Descubra detalhes do universo masculino e feminino com elegância e praticidade, e inspire-se com cada resultado.</p>  
+      
+    <button id="btn-masculina">Área Masculina</button>  
+    <button id="btn-feminina">Área Feminina</button>  
+    <button id="btn-home">Home</button>  
+  
+    <img src="imagemdaarea.png" alt="Imagem da Área" class="area-image">  
+  </div>  
+  
+  <footer>  
+    <div class="logo">  
+      <span class="salao">Salão</span> <span class="helena">Espaço Helena</span>  
+    </div>  
+    <div class="localidade">  
+      Rua Maria Rodrigues de Pontes - Alto do Velame - Russas, 490  
+    </div>  
+  </footer>  
+  
+</div>  
+  
+<script>  
+  const sideTab = document.getElementById('sideTab');  
+  const overlay = document.getElementById('overlay');  
+  const tabPanel = document.getElementById('tabPanel');  
+  const btnMasculina = document.getElementById('btn-masculina');  
+  const btnFeminina = document.getElementById('btn-feminina');  
+  const btnHome = document.getElementById('btn-home');  
+  
+  sideTab.addEventListener('click', () => {  
+    overlay.style.display = 'block';  
+    tabPanel.classList.add('active');  
+  });  
+  
+  overlay.addEventListener('click', () => {  
+    overlay.style.display = 'none';  
+    tabPanel.classList.remove('active');  
+  });  
+  
+  document.querySelectorAll('.menu a').forEach(link => {  
+    if (link.href === window.location.href) link.classList.add('active');  
+  });  
+  
+  btnMasculina.addEventListener('click', () => {  
+    window.location.href = "areamasculina.html";  
+  });  
+  
+  btnFeminina.addEventListener('click', () => {  
+    window.location.href = "areafeminina.html";  
+  });  
+  
+  btnHome.addEventListener('click', () => {  
+    window.location.href = "index.html";  
+  });  
+</script>  
+  
+</body>  
+</html>

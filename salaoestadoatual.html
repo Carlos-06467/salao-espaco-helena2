@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Salão Espaço Helena</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<meta property="og:title" content="Salão Espaço Helena" />
+<meta property="og:description" content="Valorizamos técnica, estilo e dedicação em cada serviço. Venha conhecer nosso salão!" />
+<meta property="og:image" content="https://carlos-06467.github.io/salao-espaco-helena/og-image1.png" />
+<meta property="og:url" content="https://carlos-06467.github.io/salao-espaco-helena/areafeminina.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { font-family:'Poppins', sans-serif; background:#fff; height:100%; }
+.page-container { min-height:100vh; display:flex; flex-direction:column; }
+
+/* MENU SUPERIOR (não alterar) */
+.menu {
+  background:#000;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:10px 0;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:2000;
+}
+.menu a {
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:4px 8px;
+  border-radius:4px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  transition:0.3s;
+}
+.menu a:hover { background:#222; }
+.menu a::before { content:"•"; color:#C9A35B; margin-right:4px; }
+.menu a.active { color:#C9A35B; }
+
+.menu-spacer { height:60px; }
+
+/* TÍTULO DO SITE */
+.titulo-site {
+  font-family:'Great Vibes', cursive;
+  font-size:42px;
+  text-align:center;
+  margin-top:20px;
+  line-height:1.3;
+  color:#333;
+}
+.salao { color:#000; }
+.helena { color:#C9A35B; font-weight:bold; }
+.intro {
+  font-family:'Poppins', sans-serif;
+  font-size:20px;
+  color:#555;
+  display:block;
+  margin-bottom:12px;
+  text-align:center;
+}
+
+/* RODAPÉ */
+footer {
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:30px 15px;
+  margin-top:auto;
+}
+footer .logo {
+  font-family:'Great Vibes', cursive;
+  font-size:32px;
+  margin-bottom:10px;
+}
+footer .salao { color:#fff; }
+footer .helena { color:#C9A35B; font-weight:bold; }
+footer .localidade { font-size:14px; }
+
+/* ESCONDE APENAS O MENU DA DIREITA */
+.side-tab,
+.tab-panel,
+.overlay {
+  display:none !important;
+}
+
+/* BOTÃO FLUTUANTE DA ESQUERDA */
+.float-tab-container {
+  position:fixed;
+  top:50%;
+  left:0;
+  transform:translateY(-50%);
+  background:#000;
+  border:3px solid #555;
+  border-radius:8px;
+  padding:6px 8px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  cursor:pointer;
+  z-index:1001;
+}
+.float-tab-container div {
+  color:#fff;
+  font-size:22px;
+  margin:2px 0;
+}
+
+/* PAINEL DO BOTÃO DA ESQUERDA */
+.float-panel {
+  position:fixed;
+  top:50%;
+  left:-220px;
+  transform:translateY(-50%);
+  width:200px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition:left 0.3s;
+  z-index:1000;
+}
+.float-panel.active { left:60px; }
+
+.subtopic-btn {
+    display: block;
+    text-decoration: none;
+    background: #000;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: left;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 20px;
+}
+.subtopic-btn:hover { background: #222; }
+.subtopic-btn.active { color:#C9A35B; }
+
+/* CHECKLIST */
+.checklist-section {
+  padding:20px;
+  max-width:800px;
+  margin:0 auto 20px auto;
+}
+.checklist-section h2 {
+  font-family:'Poppins', sans-serif;
+  font-size:23.8px; /* 85% do tamanho anterior */
+  margin-bottom:12px;
+  text-align:center;
+  color:gray;
+}
+.checklist-section ul {
+  list-style:none;
+}
+.checklist-section li {
+  font-size:18px;
+  margin:6px 0;
+}
+.checklist-section li span {
+  margin-right:8px;
+}
+
+/* GALERIA DE FOTOS */
+.photo-gallery {
+  display:flex;
+  justify-content:space-between;
+  max-width:1000px;
+  margin:0 auto 20px auto;
+}
+.photo-gallery img {
+  width:32%;
+  height:220px;
+  object-fit:cover;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* MODAL DE IMAGEM */
+.image-modal {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.95);
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+}
+.image-modal img {
+  max-width:90%;
+  max-height:90%;
+  border-radius:8px;
+}
+.image-modal.active { display:flex; }
+
+/* VIDEO */
+.video-section {
+  display:flex;
+  justify-content:center;
+  padding:20px;
+}
+.video-section video {
+  width:80%;
+  max-width:1000px;
+  border-radius:8px;
+}
+
+/* RESPONSIVO */
+@media(max-width:600px){
+  .titulo-site { font-size:36px; }
+  .intro { font-size:18px; }
+  .menu a { font-size:14px; padding:4px 6px; }
+  
+  .photo-gallery {
+    flex-wrap:wrap;
+    gap:4%;
+    justify-content:center;
+  }
+  .photo-gallery img {
+    width:30%;
+    height:auto;
+    margin:0; 
+  }
+  .video-section video { width:100%; }
+}
+</style>
+</head>
+
+<body>
+<div class="page-container">
+
+<link rel="stylesheet" href="menu.css">
+
+<nav class="menu">
+  <a href="index.html">Introdução</a>
+  <a href="servicos.html">Serviços</a>
+  <a href="vitrine.html">Vitrine</a>
+</nav>
+
+<div class="menu-spacer"></div>
+
+<h1 class="titulo-site">
+  <span class="intro">📈 Movimento do </span>
+  <span class="salao">Salão</span>
+  <span class="helena">Espaço Helena</span>
+</h1>
+
+<!-- CHECKLIST -->
+<section class="checklist-section">
+  <h2>O que temos hoje:</h2>
+  <ul>
+    <li><span>✅</span> Ambiente limpo e organizado</li>
+    <li><span>✅</span> Profissionais disponíveis (Helena e Dida)</li>
+    <li><span>✅</span> Estacionamento ao ar livre</li>
+    <li><span>✅</span> Wifi gratuito</li>
+    <li><span>✅</span> Café e bolacha</li>
+    <li><span>✅</span> Atendimento com hora marcada</li>
+    <li><span>✅</span> Agendamento online</li>
+    <li><span>✅</span> Funcionamento até 19 horas</li>
+  </ul>
+</section>
+
+<!-- GALERIA DE FOTOS -->
+<section class="photo-gallery">
+  <!--<img src="postagens/fotosdehoje1.jpg" alt="Foto 1" onclick="openImageModal(this.src)">
+  <img src="postagens/fotosdehoje2.jpg" alt="Foto 2" onclick="openImageModal(this.src)">
+  <img src="postagens/fotosdehoje3.jpg" alt="Foto 3" onclick="openImageModal(this.src)"> -->
+</section>
+
+<!-- MODAL DE IMAGEM -->
+<div class="image-modal" id="imageModal" onclick="closeImageModal()">
+  <img id="modalImg" src="" alt="Imagem Ampliada">
+</div>
+
+<!-- VIDEO -->
+<section class="video-section">
+ <!-- <video controls>
+ <source src="postagens/videodehoje.mp4" type="video/mp4">
+    Seu navegador não suporta o vídeo. 
+  </video> -->
+</section>
+
+<div class="float-tab-container" id="floatTab">
+  <div>🔎</div>
+  <div>🛠️</div>
+</div>
+
+<div class="float-panel" id="floatPanel">
+  <a href="postagens.html" class="subtopic-btn">📸 Publicações do Salão</a>
+  <a href="salaoestadoatual.html" class="subtopic-btn">📈 Movimento do Salão</a>
+  <a href="antesedepois.html" class="subtopic-btn">✨ Antes e Depois</a>
+</div>
+
+<footer>
+  <div class="logo">
+    <span class="salao">Salão</span>
+    <span class="helena">Espaço Helena</span>
+  </div>
+  <div class="localidade">
+    Rua Maria Rodrigues de Pontes - Alto do Velame - Russas, 490
+  </div>
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll('.menu a').forEach(link => {
+  if(link.href === window.location.href) link.classList.add('active');
+});
+
+const floatTab = document.getElementById('floatTab');
+const floatPanel = document.getElementById('floatPanel');
+
+floatTab.addEventListener('click', function(e){
+  e.stopPropagation();
+  floatPanel.classList.toggle('active');
+});
+floatPanel.addEventListener('click', function(e){
+  e.stopPropagation();
+});
+document.addEventListener('click', function(){
+  floatPanel.classList.remove('active');
+});
+
+const subtopicLinks = document.querySelectorAll('.subtopic-btn');
+subtopicLinks.forEach(link => {
+  if (link.href === window.location.href) {
+    link.classList.add('active');
+  }
+});
+
+// Funções para modal de imagem com suporte "voltar"
+function openImageModal(src){
+  document.getElementById('modalImg').src = src;
+  document.getElementById('imageModal').classList.add('active');
+  history.pushState({modalOpen:true}, '');
+}
+
+function closeImageModal(){
+  const modal = document.getElementById('imageModal');
+  if(modal.classList.contains('active')){
+    modal.classList.remove('active');
+    if(history.state && history.state.modalOpen){
+      history.back();
+    }
+  }
+}
+
+window.addEventListener('popstate', function(event){
+  const modal = document.getElementById('imageModal');
+  if(modal.classList.contains('active')){
+    modal.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>
