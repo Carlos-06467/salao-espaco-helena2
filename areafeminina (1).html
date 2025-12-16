@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="preload" as="image" href="fundoareafeminina.png">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Área Feminina - Espaço Helena</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<meta property="og:title" content="Área Feminina - Espaço Helena" />
+<meta property="og:description" content="Descubra cortes, coloração, sobrancelha e cuidados femininos com o Espaço Helena. Conheça cada passo antes de vir ao salão e aprimore seu visual com confiança." />
+<meta property="og:image" content="https://carlos-06467.github.io/salao-espaco-helena/og-image1.png" />
+<meta property="og:url" content="https://carlos-06467.github.io/salao-espaco-helena/areafeminina.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<style>
+* { box-sizing: border-box; margin:0; padding:0; }
+html, body { font-family: 'Poppins', sans-serif; background:#fff; height:100%; }
+.page-container { min-height:100vh; display:flex; flex-direction:column; justify-content:center; }
+
+.menu { background:#000; display:flex; justify-content:center; gap:40px; padding:10px 0; }
+.menu a { color:#fff; text-decoration:none; font-weight:600; padding:4px 8px; border-radius:4px; display:flex; align-items:center; gap:6px; transition:0.3s; }
+.menu a:hover { background:#222; }
+.menu a::before { content:"•"; color:#B8860B; margin-right:4px; }
+.menu a.active { color:#B8860B; }
+
+/* Título com fundo retangular, letras douradas e contorno branco fino */
+.titulo-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: url('fundoareafeminina.png') no-repeat center center;
+  background-size: 100% auto;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+}
+
+.titulo-site { 
+  font-family:'Poppins', sans-serif; 
+  font-size:50px; 
+  text-align:center; 
+  line-height:1.3; 
+  color:#e6a912; /* letras douradas */
+  font-weight:600; 
+  position: relative; 
+  -webkit-text-stroke: 0.8px #fff; /* contorno branco */
+  text-stroke: 0.8px #fff; 
+}
+
+.salao { color:#fff; font-family:'Great Vibes', cursive; }
+.helena { color:#B8860B; font-family:'Great Vibes', cursive; font-weight:bold; }
+
+.intro { font-family:'Poppins', sans-serif; font-size:20px; color:#555; display:block; margin-bottom:24px; text-align:center; }
+
+.area-texto { font-size:16px; line-height:1.6; color:#555; max-width:900px; margin:0 auto; padding:0 18px; display:flex; flex-direction:column; align-items:center; }
+
+.area-texto h2 {
+  font-size:24px;
+  font-weight:600;
+  color:#333;
+  margin:40px 0;
+  text-align:center;
+}
+
+.linha-dourada {
+  border-bottom:1px solid #FFD700;
+  width:100%;
+  margin:20px 0;
+  height:0;
+}
+
+table { width:100%; border-collapse:collapse; margin-bottom:30px; }
+th, td { padding:12px 15px; text-align:left; border-bottom:1px solid #ddd; font-size:16px; }
+th { background-color:#f5f5f5; font-weight:600; color:#333; }
+
+.corte-link { text-decoration:none; color:#000; font-weight:600; }
+.corte-link.active { color:#B8860B; }
+
+.lista-cuidados {
+  list-style:none;
+  padding-left:0;
+  margin:0 0 40px 0;
+}
+
+.lista-cuidados li {
+  display:flex;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.lista-cuidados li::before {
+  content:"•";
+  color:#FFD700;
+  font-size:20px;
+  margin-right:10px;
+}
+
+footer { background:#000; color:#fff; text-align:center; padding:30px 15px; margin-top:auto; }
+footer .logo { font-family:'Great Vibes', cursive; font-size:32px; margin-bottom:10px; font-weight:600; }
+footer .localidade { font-size:14px; }
+
+.side-tab { position:fixed; top:50%; right:0; transform:translateY(-50%); background:#000; color:#fff; width:40px; height:140px; border-radius:8px 0 0 8px; display:flex; flex-direction:column; justify-content:center; align-items:center; cursor:pointer; z-index:999; transition:width 0.3s; }
+.tab-panel { position:fixed; top:0; right:-400px; width:400px; height:100%; background:#fff; padding:30px; box-shadow:-3px 0 15px rgba(0,0,0,0.3); transition:right 0.3s; z-index:1000; overflow-y:auto; }
+.tab-panel.active { right:0; }
+.tab-panel h2 { font-size:22px; margin-bottom:15px; font-family:'Poppins', sans-serif; font-weight:600; }
+.tab-panel p { font-size:14px; line-height:1.4; margin-bottom:20px; font-family:'Poppins', sans-serif; font-weight:bold; } 
+.tab-panel button { 
+  width:100%; padding:12px; margin-bottom:12px; background:#000; color:#C9A35B; font-weight:bold; border:none; border-radius:6px; font-size:16px; cursor:pointer; transition:0.3s; font-family:'Poppins', sans-serif; 
+} 
+.tab-panel button:hover { color:#FFD700; } 
+.tab-panel button.active { color:#C9A35B; }
+
+.tab-panel img.area-image {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  display: block;
+}
+
+@media(min-width:768px){
+  .tab-panel img.area-image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:998; }
+
+@media(max-width:480px){
+  .titulo-site{font-size:44px; margin-top:30px; margin-bottom:30px;} 
+  .intro{font-size:18px; margin-bottom:20px;}
+  .area-texto{padding:0 12px; margin-bottom:30px;}
+  .area-texto h2{font-size:22px; margin:25px 0;}
+  .menu a{font-size:14px; padding:4px 6px;}
+  .tab-panel{width:300px; padding:20px;}
+  .titulo-container{padding:40px 10px;}
+}
+</style>
+</head>
+<body>
+
+<div class="page-container">
+
+  <link rel="stylesheet" href="menu.css">
+
+<nav class="menu">
+  <a href="index.html">Introdução</a>
+  <a href="servicos.html">Serviços</a>
+  <a href="vitrine.html">Vitrine</a>
+</nav>
+
+  <div class="titulo-container">
+    <h1 class="titulo-site">Área Feminina</h1>
+  </div>
+
+  <section class="area-texto">
+    <p class="intro">
+      Bem-vinda à Área Feminina do Espaço Helena!
+Aqui você encontra um guia completo com inspirações de cortes, colorações, sobrancelhas, cuidados com pele e unhas — tudo pensado para valorizar sua beleza natural. Explore cada etapa, entenda os procedimentos antes de vir ao salão e viva a experiência de autocuidado que você merece.
+    </p>
+
+    <div class="linha-dourada"></div>
+
+    <h2>Cortes de Cabelo</h2>
+    <table>
+      <thead>
+        <tr><th>Corte</th><th>Descrição</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="corteslongbob.html" class="corte-link">Long Bob</a></td><td>Moderno, leve e sofisticado. Afina o rosto e combina com qualquer ocasião.</td></tr>
+        <tr><td><a href="cortesbluntcut.html" class="corte-link">Blunt Cut</a></td><td>Reto, elegante e minimalista. Transmite força e estilo.</td></tr>
+        <tr><td><a href="cortesrepicadolongo.html" class="corte-link">Repicado Longo</a></td><td>Movimento natural, leveza e caimento perfeito para quem ama cabelos longos.</td></tr>
+        <tr><td><a href="corteshaggy.html" class="corte-link">Shaggy Hair</a></td><td>Despojado, estiloso e com personalidade — ideal para quem adora textura.</td></tr>
+        <tr><td><a href="cortepixiecut.html" class="corte-link">Pixie Cut</a></td><td>Curto, marcante e cheio de atitude. Praticidade com poder.</td></tr>
+        <tr><td><a href="cortecurtainbangs.html" class="corte-link">Curtain Bangs</a></td><td>Franjas abertas que emolduram o rosto com suavidade.</td></tr>
+        <tr><td><a href="cortecacheadodefinido.html" class="corte-link">Cacheado Definido</a></td><td>Realça os cachos com corte pensado para volume equilibrado e definição incrível.</td></tr>
+        <tr><td><a href="corteonduladoemcamadas.html" class="corte-link">Ondulado em Camadas</a></td><td>Perfeito para quem ama ondas soltas, leves e naturais.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="linha-dourada"></div>
+
+    <h2>Dicas e Cuidados (Chat GPT)</h2>
+    <ul class="lista-cuidados">
+      <li><a href="cuidadoscabelosfemininos.html" class="corte-link">Cuidados com Cabelos Femininos</a></li>
+      <li><a href="cuidadoscompeleerostofemininos.html" class="corte-link">Cuidados com Rosto e Pele  Feminina</a></li>
+      <li><a href="cuidadoscomunhasfemininas.html" class="corte-link">Cuidados com Unhas Femininas</a></li>
+    </ul>
+
+  </section>
+
+  <div class="side-tab" id="sideTab">☰</div>
+  <div class="overlay" id="overlay"></div>
+  <div class="tab-panel" id="tabPanel">
+    <p>
+      Explore nossas áreas exclusivas: acompanhe antes e depois, vídeos explicativos, processos e dicas especiais.<br>
+      Descubra detalhes do universo masculino e feminino com elegância e praticidade, e inspire-se com cada resultado.
+    </p>
+    <button id="btn-masculina">Área Masculina</button>
+    <button id="btn-feminina">Área Feminina</button>
+    <button id="btn-home">Home</button>
+    <img src="imagemdaarea.png" alt="Área Feminina" class="area-image">
+  </div>
+
+  <footer>
+    <div class="logo">
+      <span class="salao">Salão</span> <span class="helena">Espaço Helena</span>
+    </div>
+    <div class="localidade">Rua Maria Rodrigues de Pontes - Alto do Velame - Russas, 490</div>
+  </footer>
+
+</div>
+
+<script>
+const sideTab=document.getElementById('sideTab');
+const overlay=document.getElementById('overlay');
+const tabPanel=document.getElementById('tabPanel');
+const btnMasculina=document.getElementById('btn-masculina');
+const btnFeminina=document.getElementById('btn-feminina');
+const btnHome=document.getElementById('btn-home');
+
+sideTab.addEventListener('click',()=>{
+  overlay.style.display='block';
+  tabPanel.classList.add('active');
+});
+
+overlay.addEventListener('click',()=>{
+  overlay.style.display='none';
+  tabPanel.classList.remove('active');
+});
+
+document.querySelectorAll('.menu a').forEach(link=>{
+  if(link.href===window.location.href) link.classList.add('active');
+});
+
+document.querySelectorAll('.corte-link').forEach(link=>{
+  if(link.href===window.location.href) link.classList.add('active');
+});
+
+btnMasculina.addEventListener('click',()=>{
+  btnMasculina.classList.add('active');
+  btnFeminina.classList.remove('active');
+  window.location.href='areamasculina.html';
+});
+
+btnFeminina.addEventListener('click',()=>{
+  btnFeminina.classList.add('active');
+  btnMasculina.classList.remove('active');
+  window.location.href='areafeminina.html';
+});
+
+btnHome.addEventListener('click',()=>{
+  window.location.href='index.html';
+});
+</script>
+<script>
+  document.querySelectorAll('.menu a').forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
+</body>
+</html>
