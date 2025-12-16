@@ -1,0 +1,46 @@
+/* MENU GLOBAL — Espaço Helena */
+.menu {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 10px 0;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  background: #222;
+}
+
+.menu a::before {
+  content: "•";
+  color: #C9A35B;
+  margin-right: 4px;
+}
+
+.menu a.active {
+  color: #C9A35B;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .menu {
+    gap: 20px;
+  }
+  .menu a {
+    font-size: 14px;
+    padding: 4px 6px;
+  }
+}
