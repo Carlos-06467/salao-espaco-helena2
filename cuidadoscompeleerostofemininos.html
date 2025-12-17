@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cuidados com Pele e Rosto Feminino | Salão Espaço Helena</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- MENU GLOBAL -->
+<link rel="stylesheet" href="menu.css">
+
+<style>
+  * { box-sizing: border-box; margin:0; padding:0; }
+  html, body { font-family: 'Poppins', sans-serif; background:#fff; height:100%; }
+  .page-container { min-height:100vh; display:flex; flex-direction:column; }
+
+  /* Título principal e logo abaixo */
+  .titulo-site { font-size:36px; text-align:center; margin-top:20px; line-height:1.3; color:#333; }
+  .logo-salao { text-align:center; font-size:36px; margin-top:8px; font-family:'Great Vibes', cursive; font-weight:900; }
+  .logo-salao .salao { color:#000; }
+  .logo-salao .helena { color:#C9A35B; }
+
+  /* Conteúdo da área branca */
+  .sobre { max-width:900px; margin:24px auto; font-size:16px; line-height:1.6; color:#555; padding:0 18px; }
+  .sobre h2 { font-size:22px; margin:18px 0 10px; color:#000; }
+  .sobre p { margin-bottom:14px; }
+  .sobre ul { margin-bottom:14px; padding-left:20px; }
+  .sobre strong { font-weight:600; color:#555; }
+
+  /* Rodapé */
+  footer { background:#000; color:#fff; text-align:center; padding:30px 15px; margin-top:auto; }
+  footer .logo { font-family:'Great Vibes', cursive; font-size:32px; margin-bottom:10px; }
+  footer .salao { color:#fff; }
+  footer .helena { color:#C9A35B; font-weight:bold; }
+  footer .localidade { font-size:14px; }
+
+  /* Aba lateral */
+  .side-tab {
+    position:fixed;
+    top:50%;
+    right:0;
+    transform:translateY(-50%);
+    background:#000;
+    color:#fff;
+    width:40px;
+    height:140px;
+    border-radius:8px 0 0 8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    z-index:999;
+  }
+
+  .tab-panel {
+    position:fixed;
+    top:0;
+    right:-400px;
+    width:400px;
+    height:100%;
+    background:#fff;
+    padding:30px;
+    box-shadow:-3px 0 15px rgba(0,0,0,0.3);
+    transition:right 0.3s;
+    z-index:1000;
+    overflow-y:auto;
+  }
+
+  .tab-panel.active { right:0; }
+
+  .tab-panel h2 { font-size:22px; margin-bottom:15px; }
+
+  .tab-panel p {
+    font-size:14px;
+    line-height:1.4;
+    margin-bottom:20px;
+    font-weight:bold;
+  }
+
+  .tab-panel button {
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    background:#000;
+    color:#C9A35B;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+  }
+
+  .tab-panel button:hover { color:#FFD700; }
+
+  .tab-panel button.active { color:#C9A35B; }
+
+  .tab-panel .area-image {
+    width:100%;
+    height:auto;
+    margin-top:12px;
+    border-radius:6px;
+  }
+
+  .overlay {
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    z-index:998;
+  }
+
+  @media(max-width:480px){
+    .titulo-site{font-size:28px;}
+    .logo-salao{font-size:28px;}
+    .sobre{font-size:15px; padding:0 12px;}
+    .tab-panel{width:300px; padding:20px;}
+  }
+</style>
+</head>
+
+<body>
+<div class="page-container">
+
+  <!-- MENU SUPERIOR -->
+  <nav class="menu">
+    <a href="index.html">Introdução</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="vitrine.html">Vitrine</a>
+  </nav>
+
+  <!-- TÍTULO -->
+  <h1 class="titulo-site">Cuidados com Pele e Rosto Feminino</h1>
+
+  <div class="logo-salao">
+    <span class="salao">Salão </span><span class="helena">Espaço Helena</span>
+  </div>
+
+  <!-- CONTEÚDO -->
+  <section class="sobre">
+
+    <div style="text-align:center; margin:20px 0;">
+      <img src="pelefeminina000.png" alt="Cuidados com pele feminina" style="max-width:100%; border-radius:10px;">
+    </div>
+
+    <h2>A Importância do Cuidado Diário</h2>
+    <p>Uma rotina de cuidados com a pele facial é essencial para manter a saúde, elasticidade e luminosidade do rosto. Pele bem cuidada previne envelhecimento precoce, acne, ressecamento e manchas. Além disso, transmite confiança e bem-estar, refletindo diretamente na autoestima feminina.</p>
+
+    <h2>Limpeza Adequada</h2>
+    <p>Remover impurezas, maquiagem e excesso de oleosidade é o primeiro passo para uma pele saudável. Produtos adequados ao seu tipo de pele (seca, mista ou oleosa) garantem limpeza sem agredir, mantendo a barreira natural e evitando irritações.</p>
+
+    <h2>Hidratação e Nutrição</h2>
+    <p>Hidratantes, séruns e cremes com vitaminas são essenciais para repor água e nutrientes. Ingredientes como ácido hialurônico, vitamina C e antioxidantes fortalecem a pele, reduzem sinais de envelhecimento e promovem viço e firmeza.</p>
+
+    <h2>Proteção Solar</h2>
+    <p>O uso diário de filtro solar previne manchas, envelhecimento precoce e danos causados pelos raios UV. Mesmo em dias nublados, a proteção é indispensável para manter a pele uniforme e saudável.</p>
+
+    <h2>Exfoliação e Renovação</h2>
+    <p>Esfoliar a pele 1-2 vezes por semana remove células mortas, desobstrui poros e melhora a absorção de produtos. A renovação celular constante ajuda a manter a textura suave, uniforme e radiante.</p>
+
+    <h2>Cuidados Específicos</h2>
+    <p>Rugas, linhas de expressão, manchas e acne exigem atenção especial. Produtos específicos e tratamentos no salão, como limpeza de pele, máscaras nutritivas e massagens faciais, promovem resultados duradouros e visíveis.</p>
+
+    <h2>Hábitos Saudáveis</h2>
+    <ul>
+      <li><strong>Alimentação equilibrada:</strong> influencia diretamente na saúde da pele.</li>
+      <li><strong>Hidratação constante:</strong> mantém elasticidade e viço.</li>
+      <li><strong>Evitar estresse:</strong> previne acne e envelhecimento precoce.</li>
+      <li><strong>Rotina de sono adequada:</strong> colabora para regeneração da pele.</li>
+    </ul>
+
+    <h2>Por Que Ir ao Salão é Essencial</h2>
+    <p>Procedimentos estéticos realizados por profissionais garantem limpeza profunda, massagem facial, aplicação de produtos específicos e acompanhamento seguro. Isso potencializa a eficácia dos cuidados diários, proporcionando resultados visíveis e duradouros.</p>
+
+    <h2>Quando Procurar Ajuda Profissional</h2>
+    <p>Sinais como vermelhidão persistente, acne severa, manchas ou irritações contínuas indicam necessidade de avaliação profissional. Um especialista poderá indicar tratamentos personalizados, garantindo segurança e saúde da pele.</p>
+
+  </section>
+
+  <!-- ABA LATERAL -->
+  <div class="side-tab" id="sideTab">☰</div>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="tab-panel" id="tabPanel">
+    <p>Explore nossas áreas masculinas e femininas, acompanhe antes e depois, vídeos explicativos, processos e dicas especiais. Descubra detalhes do universo feminino e masculino com elegância e praticidade.</p>
+
+    <button id="btn-masculina">Área Masculina</button>
+    <button id="btn-feminina">Área Feminina</button>
+    <button id="btn-home">Home</button>
+
+    <img src="imagemdaarea.png" alt="Área Exclusiva" class="area-image">
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="logo">
+      <span class="salao">Salão</span> <span class="helena">Espaço Helena</span>
+    </div>
+    <div class="localidade">Rua Maria Rodrigues de Pontes - Alto do Velame - Russas, 490</div>
+  </footer>
+
+</div>
+
+<script>
+  const sideTab = document.getElementById('sideTab');
+  const overlay = document.getElementById('overlay');
+  const tabPanel = document.getElementById('tabPanel');
+
+  sideTab.onclick = () => {
+    overlay.style.display = 'block';
+    tabPanel.classList.add('active');
+  };
+
+  overlay.onclick = () => {
+    overlay.style.display = 'none';
+    tabPanel.classList.remove('active');
+  };
+
+  document.getElementById('btn-masculina').onclick = () => location.href = "areamasculina.html";
+  document.getElementById('btn-feminina').onclick = () => location.href = "areafeminina.html";
+  document.getElementById('btn-home').onclick = () => location.href = "index.html";
+
+  document.querySelectorAll('.menu a').forEach(link => {
+    if (link.href === window.location.href) link.classList.add('active');
+  });
+</script>
+
+</body>
+</html>
