@@ -7,12 +7,18 @@
   
 <title>Salão Espaço Helena</title>  
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">  
-  
-<meta property="og:title" content="Salão Espaço Helena" />  
-<meta property="og:description" content="Valorizamos técnica, estilo e dedicação em cada serviço. Venha conhecer nosso site do salão!" />  
-<meta property="og:image" content="https://carlos-06467.github.io/salao-espaco-helena-oficial/imagecompartilhamento.png" />  
-<meta property="og:url" content="https://carlos-06467.github.io/salao-espaco-helena-oficial/antesedepois.html" />  
-<meta name="twitter:card" content="summary_large_image" />  
+    <!-- Open Graph (Facebook, WhatsApp, etc.) -->
+  <meta property="og:title" content="Salão Espaço Helena" />
+  <meta property="og:description" content="Valorizamos técnica, estilo e dedicação em cada serviço. Venha conhecer nosso site do salão!" />
+  <meta property="og:image" content="https://carlos-06467.github.io/salao-espaco-helena-oficial/imagecompartilhamento.png" />
+  <meta property="og:url" content="https://carlos-06467.github.io/salao-espaco-helena-oficial/antesedepois.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Salão Espaço Helena" />
+  <meta name="twitter:description" content="Valorizamos técnica, estilo e dedicação em cada serviço. Venha conhecer nosso site do salão!" />
+  <meta name="twitter:image" content="https://carlos-06467.github.io/salao-espaco-helena-oficial/imagecompartilhamento.png" />
   
 <style>  
 * { box-sizing:border-box; margin:0; padding:0; }  
@@ -103,6 +109,294 @@ footer .localidade { font-size:14px; }
   position:fixed;  
   top:50%;  
   left:0;  
+  transform:translateY(-50%);  
+  background:#000;  
+  border:3px solid #555;  
+  border-radius:8px;  
+  padding:6px 8px;  
+  display:flex;  
+  flex-direction:column;  
+  align-items:center;  
+  cursor:pointer;  
+  z-index:1001;  
+}  
+.float-tab-container div {  
+  color:#fff;  
+  font-size:22px;  
+  margin:2px 0;  
+}  
+  
+/* PAINEL DO BOTÃO DA ESQUERDA */  
+.float-panel {  
+  position:fixed;  
+  top:50%;  
+  left:-220px;  
+  transform:translateY(-50%);  
+  width:200px;  
+  display:flex;  
+  flex-direction:column;  
+  gap:10px;  
+  transition:left 0.3s;  
+  z-index:1000;  
+}  
+.float-panel.active { left:60px; }  
+  
+.subtopic-btn {  
+    display: block;  
+    text-decoration: none;  
+    background: #000;  
+    color: white;  
+    font-weight: bold;  
+    font-size: 16px;  
+    text-align: left;  
+    padding: 8px 12px;  
+    border: none;  
+    border-radius: 6px;  
+    cursor: pointer;  
+    transition: 0.3s;  
+    margin-left: 20px;  
+}  
+.subtopic-btn:hover { background: #222; }  
+.subtopic-btn.active { color:#C9A35B; }  
+  
+/* CHECKLIST */  
+.checklist-section {  
+  padding:20px;  
+  max-width:800px;  
+  margin:0 auto 20px auto;  
+}  
+.checklist-section h2 {  
+  font-family:'Poppins', sans-serif;  
+  font-size:23.8px;   
+  margin-bottom:12px;  
+  text-align:center;  
+  color:gray;  
+}  
+.checklist-section ul {  
+  list-style:none;  
+}  
+.checklist-section li {  
+  font-size:18px;  
+  margin:6px 0;  
+}  
+.checklist-section li span {  
+  margin-right:8px;  
+}  
+  
+/* GALERIA DE FOTOS */  
+.photo-gallery {  
+  display:flex;  
+  justify-content:space-between;  
+  max-width:1000px;  
+  margin:0 auto 20px auto;  
+}  
+.photo-gallery img {  
+  display:none;   
+}  
+  
+/* MODAL DE IMAGEM */  
+.image-modal {  
+  display:none;  
+  position:fixed;  
+  top:0;  
+  left:0;  
+  width:100%;  
+  height:100%;  
+  background:rgba(0,0,0,0.95);  
+  justify-content:center;  
+  align-items:center;  
+  z-index:3000;  
+}  
+.image-modal img {  
+  max-width:90%;  
+  max-height:90%;  
+  border-radius:8px;  
+}  
+.image-modal.active { display:flex; }  
+  
+/* VIDEO */  
+.video-section {  
+  display:flex;  
+  justify-content:center;  
+  padding:20px;  
+}  
+.video-section video {  
+  display:none;   
+}  
+  
+/* RESPONSIVO */  
+@media(max-width:600px){  
+  .titulo-site { font-size:36px; }  
+  .intro { font-size:18px; }  
+  .menu a { font-size:14px; padding:4px 6px; }  
+  .photo-gallery { flex-wrap:wrap; gap:4%; justify-content:center; }  
+  .photo-gallery img { width:30%; height:auto; margin:0; }  
+  .video-section video { width:100%; }  
+}  
+  
+/* MENU ABAIXO DE "Escolha uma opção" */  
+.category-menu-below {  
+  padding: 12px 0;  
+  margin: 10px 0 20px 0;  
+  max-width: 900px;  
+  text-align: center;   
+}  
+  
+/* TÍTULO DOS GRUPOS */  
+.category-menu-below .menu-title {  
+  font-weight: bold;  
+  padding: 10px 16px;         
+  margin-right: 8px;  
+  display: inline-block;  
+  border: 1.5px solid #000;   
+  border-radius: 12px;        
+  background: #C9A35B;        
+  color: white;  
+  transition: all 0.3s;  
+}  
+  
+/* ITENS - CAIXINHAS PRETAS */  
+.category-menu-below .menu-item {  
+  display: inline-block;  
+  background: #000;   
+  border: 1.5px solid #888;   
+  border-radius: 12px;  
+  padding: 6px 12px;  
+  margin: 4px;  
+  text-decoration: none;  
+  color: white;   
+  font-weight: 600;  
+  transition: all 0.3s;  
+  position: relative;  
+}  
+  
+/* Hover e ativo com borda igual aos títulos e dourado mais escuro */  
+.category-menu-below .menu-item:hover,  
+.category-menu-below .menu-item.active {  
+  background: #B78B3A;  
+  color: black;  
+  border: 1.5px solid #888;  
+}  
+.category-menu-below .menu-item:hover::after,  
+.category-menu-below .menu-item.active::after {  
+  content: '';  
+  position: absolute;  
+  left: 0;  
+  bottom: -2px;  
+  width: 100%;  
+  height: 2px;  
+  background: #C9A35B;  
+  border-radius: 2px;  
+}  
+</style>  
+</head>  
+  
+<body>  
+<div class="page-container">  
+  
+<link rel="stylesheet" href="menu.css">  
+  
+<nav class="menu">  
+  <a href="index.html">Introdução</a>  
+  <a href="servicos.html">Serviços</a>  
+  <a href="vitrine.html">Vitrine</a>  
+</nav>  
+  
+<div class="menu-spacer"></div>  
+  
+<h1 class="titulo-site">  
+  <span class="intro">  
+    ✨️ Antes e depois </span>  
+  <span class="salao">Salão</span>  
+  <span class="helena">Espaço Helena</span>  
+</h1>  
+  
+<section class="checklist-section">  
+  <h2>Escolha uma opção: </h2>  
+  <ul></ul>  
+</section>  
+  
+<section class="category-menu-below">  
+  <div class="menu-group">  
+    <span class="menu-title"><strong>Homens:</strong></span>  
+    <a href="antesedepoispasta/homens-cortes.html" class="menu-item">Cortes</a>  
+    <a href="antesedepoispasta/homens-cabelos.html" class="menu-item">Cabelos</a>  
+    <a href="antesedepoispasta/homens-barba.html" class="menu-item">Barba</a>  
+    <a href="antesedepoispasta/homens-sobrancelhas.html" class="menu-item">Sobrancelhas</a>  
+    <a href="antesedepoispasta/homens-unhas.html" class="menu-item">Unhas</a>  
+  </div>  
+  
+  <div class="menu-group">  
+    <span class="menu-title"><strong>Mulheres:</strong></span>  
+    <a href="antesedepoispasta/mulheres-cortes.html" class="menu-item">Cortes</a>  
+    <a href="antesedepoispasta/mulheres-cabelos.html" class="menu-item">Cabelos</a>  
+    <a href="antesedepoispasta/mulheres-sobrancelhas.html" class="menu-item">Sobrancelhas</a>  
+    <a href="antesedepoispasta/mulheres-unhas.html" class="menu-item">Unhas</a>  
+  </div>  
+</section>  
+  
+<section class="photo-gallery"></section>  
+  
+<div class="image-modal" id="imageModal" onclick="closeImageModal()">  
+  <img id="modalImg" src="" alt="Imagem Ampliada">  
+</div>  
+  
+<section class="video-section"></section>  
+  
+<div class="float-tab-container" id="floatTab">  
+  <div>🔎</div>  
+  <div>🛠️</div>  
+</div>  
+  
+<div class="float-panel" id="floatPanel">  
+  <a href="postagens.html" class="subtopic-btn">📸 Publicações do Salão</a>  
+  <a href="salaoestadoatual.html" class="subtopic-btn">📈 Movimento do Salão</a>  
+ <a href="antesedepois.html" class="subtopic-btn active">✨ Antes e Depois</a>  
+</div>  
+  
+<footer>  
+  <div class="logo">  
+    <span class="salao">Salão</span>  
+    <span class="helena">Espaço Helena</span>  
+  </div>  
+  <div class="localidade">  
+    Rua Maria Rodrigues de Pontes - Alto do Velame - Russas, 490  
+  </div>  
+</footer>  
+  
+</div>  
+  
+<script>  
+document.querySelectorAll('.menu a').forEach(link => {  
+  if(link.href === window.location.href) link.classList.add('active');  
+});  
+  
+const floatTab = document.getElementById('floatTab');  
+const floatPanel = document.getElementById('floatPanel');  
+  
+floatTab.addEventListener('click', function(e){  
+  e.stopPropagation();  
+  floatPanel.classList.toggle('active');  
+});  
+floatPanel.addEventListener('click', function(e){  
+  e.stopPropagation();  
+});  
+document.addEventListener('click', function(){  
+  floatPanel.classList.remove('active');  
+});  
+  
+// Apenas 1 item ativo por vez  
+const allMenuItems = document.querySelectorAll('.category-menu-below .menu-item');  
+allMenuItems.forEach(item => {  
+  item.addEventListener('click', function() {  
+    allMenuItems.forEach(i => i.classList.remove('active'));  
+    this.classList.add('active');  
+  });  
+});  
+</script>  
+  
+</body>  
+</html>    left:0;  
   transform:translateY(-50%);  
   background:#000;  
   border:3px solid #555;  
